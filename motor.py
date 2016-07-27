@@ -37,7 +37,7 @@ class motor:
 		GPIO.setmode(GPIO.BCM)
 		try:
 			print "Starting"
-			for x in range(0, num_steps):
+			for x in range(0, abs(num_steps)):
 				print "Step: " + str(x)
 				for pin in range(0,self.stepCount):
 					print "Pin: " + str(pin)
@@ -78,6 +78,8 @@ if __name__ == "__main__":
 	GPIO.setmode(GPIO.BCM)
 	pins = [14,15,18,17]
 	mtr = motor(pins)
+	mtr.shift(100)
+	mtr.shift(-100)
 
 
 
