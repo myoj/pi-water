@@ -9,7 +9,7 @@ class motor:
 	StepCounter = 0
 	WaitTime = 1.0
 
-	StepCount = 8
+	stepCount = 8
 	Seq = []
 	Seq = range(0, StepCount)
 	Seq[0] = [1,0,0,0]
@@ -70,8 +70,6 @@ class motor:
 					print "por que no los dos 2"
 					self.StepCounter = self.stepCount
 
-				print "por que no los dos 3"
-				
 				print "Waiting"
 				time.sleep(self.WaitTime)
 		except:
