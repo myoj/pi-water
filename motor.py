@@ -64,10 +64,14 @@ class motor:
 
 				print "Rotating"
 				if (self.StepCounter == self.stepCount):
+					print "por que no los dos"
 					self.StepCounter = 0
 				elif (self.StepCounter < 0):
+					print "por que no los dos 2"
 					self.StepCounter = self.stepCount
 
+				print "por que no los dos 3"
+				
 				print "Waiting"
 				time.sleep(self.WaitTime)
 		except:
