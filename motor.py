@@ -43,7 +43,7 @@ class motor:
 					print "Pin: " + str(pin)
 					cur_pin = self.pin_set[pin]
 					print "Why?"
-					setting = self.seq[self.StepCounter][pin]
+					setting = self.Seq[self.StepCounter][pin]
 					print "What?"
 					if setting==1:
 						print "Set High"
