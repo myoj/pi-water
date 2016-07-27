@@ -51,16 +51,19 @@ class motor:
 						print "Set Low"
 						GPIO.output(cur_pin, False)		
 
+				print "Counting Up"
 				if(num_steps > 0):
 					self.StepCounter += 1
 				else:
 					self.StepCounter -= 1
 
+				print "Rotating"
 				if (self.StepCounter == self.stepCount):
 					self.StepCounter = 0
 				elif (self.StepCounter < 0):
 					self.StepCounter = self.stepCount
 
+				print "Waiting"
 				time.sleep(self.WaitTime)
 		except:
 			print "Failing"
