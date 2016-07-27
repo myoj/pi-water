@@ -89,7 +89,7 @@ if __name__ == "__main__":
 	GPIO.setmode(GPIO.BCM)
 	pins = [14,15,18,17]
 	mtr = motor(pins)
-	mtr.shift(int(sys.argv[0]))
+	mtr.shift(int(sys.argv[1]))
 
 
 
