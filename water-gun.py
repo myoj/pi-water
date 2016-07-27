@@ -63,6 +63,6 @@ class water_gun:
 		self.move_y(distance_to_y)
 
 	def __init__(self, motor_x_gpio, motor_y_gpio, motor_shoot_gpio):
-		self.motor_x = direction_motor(motor_x_gpio)
-		self.motor_y = direction_motor(motor_y_gpio)
-		self.motor_shoot = trigger_motor(motor_shoot_gpio)
+		self.motor_x = motor(motor_x_gpio)
+		self.motor_y = motor(motor_y_gpio)
+		self.motor_shoot = motor(motor_shoot_gpio)
