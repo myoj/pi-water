@@ -71,6 +71,12 @@ class motor:
 				GPIO.setup(pin,GPIO.OUT)
 				GPIO.output(pin, True)
 
+if __name__ == "__main__":
+	GPIO.cleanup()
+	GPIO.setmode(GPIO.BCM)
+	pins = [14,15,18,17]
+	mtr = motor(pins)
+
 
 
 
