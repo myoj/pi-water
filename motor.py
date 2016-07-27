@@ -43,7 +43,7 @@ class motor:
 					print "Pin: " + str(pin)
 					cur_pin = self.pin_set[pin]
 					setting = self.seq[self.StepCounter][pin]
-
+					print "What?"
 					if setting==1:
 						print "Set High"
 						GPIO.output(cur_pin, True)
