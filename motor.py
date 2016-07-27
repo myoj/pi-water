@@ -69,12 +69,12 @@ class motor:
 			print "Failing"
 			for pin in self.pin_set:
 				GPIO.setup(pin,GPIO.OUT)
-				GPIO.output(pin, True)
+				GPIO.output(pin, False)
 		finally:
 			print "Finishing"
 			for pin in self.pin_set:
 				GPIO.setup(pin,GPIO.OUT)
-				GPIO.output(pin, True)
+				GPIO.output(pin, False)
 
 if __name__ == "__main__":
 	GPIO.setwarnings(False)
