@@ -45,11 +45,11 @@ class motor:
 					setting = self.seq[self.StepCounter][pin]
 
 					if setting==1:
-						GPIO.output(cur_pin, True)
 						print "Set High"
+						GPIO.output(cur_pin, True)
 					else:
-						GPIO.output(cur_pin, False)
 						print "Set Low"
+						GPIO.output(cur_pin, False)		
 
 				if(num_steps > 0):
 					self.StepCounter += 1
@@ -74,6 +74,7 @@ class motor:
 				GPIO.output(pin, True)
 
 if __name__ == "__main__":
+	GPIO.setwarnings(FALSE)
 	GPIO.cleanup()
 	GPIO.setmode(GPIO.BCM)
 	pins = [14,15,18,17]
