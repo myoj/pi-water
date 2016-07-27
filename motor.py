@@ -27,7 +27,10 @@ class motor:
 		# Give the board a second to adjust
 		time.sleep(0.5)
 
-	def step(self, num_steps):
+	def shoot(self):
+		return
+
+	def shift(self, num_steps):
 		try:
 			for step in range(0, abs(num_steps)):
 				for pin in range(0,4):
