@@ -7,7 +7,7 @@ import RPi.GPIO as GPIO
 class motor:
 	pin_set = []
 	StepCounter = 0
-	WaitTime = 0.0015
+	WaitTime = 0.015
 
 	stepCount = 4
 	Seq = []
