@@ -31,6 +31,7 @@ class motor:
 		return
 
 	def shift(self, num_steps):
+		GPIO.setmode(GPIO.BCM)
 		try:
 			print "Starting"
 			for x in range(0, num_steps):
@@ -59,6 +60,8 @@ class motor:
 
 				time.sleep(self.WaitTime)
 		except:
+			e = sys.exc_info()[0]
+			print e
 			print "Failing"
 			for pin in self.pin_set:
 				GPIO.setup(pin,GPIO.OUT)
