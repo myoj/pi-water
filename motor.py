@@ -64,12 +64,12 @@ class motor:
 			print "Failing"
 			for pin in self.pin_set:
 				GPIO.setup(pin,GPIO.OUT)
-				GPIO.output(pin, False)
+				GPIO.output(pin, True)
 		finally:
 			print "Finishing"
 			for pin in self.pin_set:
 				GPIO.setup(pin,GPIO.OUT)
-				GPIO.output(pin, False)
+				GPIO.output(pin, True)
 
 
 
