@@ -42,8 +42,10 @@ class motor:
 
 					if setting==1:
 						GPIO.output(cur_pin, True)
+						print "Set High"
 					else:
 						GPIO.output(cur_pin, False)
+						print "Set Low"
 
 				if(num_steps > 0):
 					self.StepCounter += 1
@@ -57,10 +59,12 @@ class motor:
 
 				time.sleep(self.WaitTime)
 		except:
+			print "Failing"
 			for pin in self.pin_set:
 				GPIO.setup(pin,GPIO.OUT)
 				GPIO.output(pin, False)
 		finally:
+			print "Finishing"
 			for pin in self.pin_set:
 				GPIO.setup(pin,GPIO.OUT)
 				GPIO.output(pin, False)
