@@ -11,7 +11,7 @@ class motor:
 
 	stepCount = 8
 	Seq = []
-	Seq = range(0, StepCount)
+	Seq = range(0, stepCount)
 	Seq[0] = [1,0,0,0]
 	Seq[1] = [1,1,0,0]
 	Seq[2] = [0,1,0,0]
