@@ -7,7 +7,7 @@ import RPi.GPIO as GPIO
 class motor:
 	pin_set = []
 	StepCounter = 0
-	WaitTime = 0.0015
+	WaitTime = 1.0
 
 	StepCount = 8
 	Seq = []
@@ -87,8 +87,7 @@ if __name__ == "__main__":
 	GPIO.setmode(GPIO.BCM)
 	pins = [14,15,18,17]
 	mtr = motor(pins)
-	while 1==1:
-		mtr.shift(100)
+	mtr.shift(100)
 
 
 
