@@ -1,4 +1,5 @@
 import time
+import sys
 import RPi.GPIO as GPIO
 
 class motor:
