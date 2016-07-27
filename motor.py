@@ -61,8 +61,6 @@ class motor:
 
 				time.sleep(self.WaitTime)
 		except:
-			e = sys.exc_info()[0]
-			print e
 			print "Failing"
 			for pin in self.pin_set:
 				GPIO.setup(pin,GPIO.OUT)
