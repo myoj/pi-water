@@ -32,7 +32,9 @@ class motor:
 
 	def shift(self, num_steps):
 		try:
+			print "Starting"
 			for step in range(0, abs(num_steps)):
+				print "Step" + str(step)
 				for pin in range(0,4):
 					cur_pin = self.pin_set[pin]
 					setting = self.seq[self.StepCounter][pin]
