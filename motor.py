@@ -37,7 +37,8 @@ class motor:
 	def shoot(self):
 		return
 
-	def shift(self, num_steps):
+	def shift(self, degrees):
+		num_steps = degrees * 12
 		GPIO.setmode(GPIO.BCM)
 		try:
 			print "Starting"
