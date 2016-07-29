@@ -44,15 +44,10 @@ class motor:
 		GPIO.setmode(GPIO.BCM)
 		try:
 			print "Starting" + str(num_steps)
-			step_for = num_steps
-			if(step_for < 0):
-				step_for *= -1
 
-			for x in range(0, step_for):
+			for x in range(0, abs(num_steps)):
 				for pin in range(0,4):
 					cur_pin = self.pin_set[pin]
-					print self.StepCounter
-					print pin
 					setting = self.Seq[self.StepCounter][pin]
 					if setting==1:
 						GPIO.output(cur_pin, True)
