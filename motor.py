@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 
+import math
 import time
 import sys
 import RPi.GPIO as GPIO
@@ -8,6 +9,7 @@ class motor:
 	pin_set = []
 	StepCounter = 0
 	WaitTime = 0.0015
+	StepsPerDegree = 11.638
 
 	stepCount = 8
 	Seq = []
@@ -38,40 +40,29 @@ class motor:
 		return
 
 	def shift(self, degrees):
-		num_steps = degrees * 12
+		num_steps = int(math.ceil(degrees * self.StepsPerDegree))
 		GPIO.setmode(GPIO.BCM)
 		try:
-			print "Starting"
+			print "Starting" + str(num_steps)
 			for x in range(0, abs(num_steps)):
-				print "Step: " + str(x)
 				for pin in range(0,4):
 					cur_pin = self.pin_set[pin]
-					print "Pin: " + str(cur_pin)
-					print "Why?"
 					setting = self.Seq[self.StepCounter][pin]
-					print "What?"
 					if setting==1:
-						print "Set High"
 						GPIO.output(cur_pin, True)
 					else:
-						print "Set Low"
 						GPIO.output(cur_pin, False)		
 
-				print "Counting Up"
 				if(num_steps > 0):
 					self.StepCounter += 1
 				else:
 					self.StepCounter -= 1
 
-				print "Rotating"
 				if (self.StepCounter == self.stepCount):
-					print "por que no los dos"
 					self.StepCounter = 0
 				elif (self.StepCounter < 0):
-					print "por que no los dos 2"
 					self.StepCounter = self.stepCount
 
-				print "Waiting"
 				time.sleep(self.WaitTime)
 		except:
 			print "Failing"
