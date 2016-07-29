@@ -8,10 +8,6 @@ class water_gun:
 	shots_remaining = 100
 	current_x = (MAX_STEPS / 2)
 	current_y = (MAX_STEPS / 4)
-
-	motor_x = 0
-	motor_y = 0
-	motor_shoot = 0
 	
 	def move_x(self, steps):
 		#Removing unecessary full rotations
@@ -68,7 +64,7 @@ class water_gun:
 		self.motor_shoot = motor(motor_shoot_gpio)
 
 	def __del__(self):
-		return_to_center()
+		self.return_to_center()
 
 if __name__ == "__main__":
 	pin_set_x = [14,15,18,17]
