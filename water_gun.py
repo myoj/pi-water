@@ -1,5 +1,5 @@
 
-import motor as motor
+from motor import motor
 
 "Set this equal to the number of steps in a 360 degree rotation of yoru stepper motor"
 MAX_STEPS = 360
