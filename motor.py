@@ -54,6 +54,8 @@ class motor:
 					print "whatup1.5"
 					cur_pin = self.pin_set[pin]
 					print "whatup1.6"
+					print self.StepCounter
+					print self.pin
 					setting = self.Seq[self.StepCounter][pin]
 					print "whatup1.7"
 					if setting==1:
