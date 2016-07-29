@@ -13,7 +13,7 @@ class water_gun:
 		#Removing unecessary full rotations
 		steps = steps % MAX_STEPS
 
-		if(sum(self.current_x, steps) > MAX_STEPS):
+		if((self.current_x + steps) > MAX_STEPS):
 			#Moving in counterclockwise direction to prevent tangled wires
 			steps = steps - MAX_STEPS
 			print "spinning {0} steps".format(steps)
@@ -64,6 +64,7 @@ class water_gun:
 		self.motor_shoot = motor(motor_shoot_gpio)
 
 if __name__ == "__main__":
+	GPIO.setwarnings(False)
 	pin_set_x = [14,15,18,17]
 	pin_set_y = [27,22,23,24]
 	pin_set_s = [10,9,25,8]
