@@ -45,9 +45,8 @@ class motor:
 		try:
 			print "Starting" + str(num_steps)
 			step_for = num_steps
-			if(step_for < 0){
+			if(step_for < 0):
 				step_for *= -1
-			}
 
 			for x in range(0, step_for):
 				print "whatup"
