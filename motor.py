@@ -49,37 +49,26 @@ class motor:
 				step_for *= -1
 
 			for x in range(0, step_for):
-				print "whatup1"
 				for pin in range(0,4):
-					print "whatup1.5"
 					cur_pin = self.pin_set[pin]
-					print "whatup1.6"
 					print self.StepCounter
 					print pin
 					setting = self.Seq[self.StepCounter][pin]
-					print "whatup1.7"
 					if setting==1:
-						print "whatup1.8"
 						GPIO.output(cur_pin, True)
 					else:
-						print "whatup1.9"
-						GPIO.output(cur_pin, False)		
-
-				print "whatup2"
+						GPIO.output(cur_pin, False)
 
 				if(num_steps > 0):
 					self.StepCounter += 1
 				else:
 					self.StepCounter -= 1
 
-				print "whatup3"
-
 				if (self.StepCounter == self.stepCount):
 					self.StepCounter = 0
 				elif (self.StepCounter < 0):
 					self.StepCounter = (self.stepCount - 1)
 
-				print "whatup4"
 				time.sleep(self.WaitTime)
 		except:
 			print "Failing"
