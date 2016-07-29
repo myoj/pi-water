@@ -1,5 +1,6 @@
 
 from motor import motor
+import RPi.GPIO as GPIO
 
 "Set this equal to the number of steps in a 360 degree rotation of yoru stepper motor"
 MAX_STEPS = 360
