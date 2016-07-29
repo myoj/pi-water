@@ -73,13 +73,13 @@ if __name__ == "__main__":
 	pi_water_controller = water_gun(pin_set_x, pin_set_y, pin_set_s)
 
 	pi_water_controller.move_x(100)
-	pi_water_controller.move_x(-280)
+	pi_water_controller.move_x(280)
 	pi_water_controller.move_x(360)
-	pi_water_controller.move_x(-180)
+	pi_water_controller.move_x(180)
 	pi_water_controller.move_x(75)
 
 	pi_water_controller.move_y(90)
-	pi_water_controller.move_y(-180)
+	pi_water_controller.move_y(s180)
 	pi_water_controller.move_y(45)
 	pi_water_controller.move_y(32)
 
