@@ -9,7 +9,7 @@ class motor:
 	pin_set = []
 	StepCounter = 0
 	WaitTime = 0.0015
-	StepsPerDegree = 11.638
+	StepsPerDegree = 11.378
 
 	stepCount = 8
 	Seq = []
