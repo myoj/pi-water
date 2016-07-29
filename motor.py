@@ -77,7 +77,7 @@ class motor:
 				if (self.StepCounter == self.stepCount):
 					self.StepCounter = 0
 				elif (self.StepCounter < 0):
-					self.StepCounter = self.stepCount
+					self.StepCounter = (self.stepCount - 1)
 
 				print "whatup4"
 				time.sleep(self.WaitTime)
