@@ -19,7 +19,7 @@ class water_gun:
 			print "spinning {0} steps".format(steps)
 			self.motor_x.shift(steps)
 			self.current_x += steps
-		if(sum(self.current_x, steps) < 0):
+		if((self.current_x + steps) < 0):
 			#Moving in clockwise direction to prevent tangled wires
 			degrees = MAX_STEPS - steps
 			print "spinning {0} degrees".format(steps)
@@ -35,11 +35,11 @@ class water_gun:
 		degrees = steps % MAX_STEPS
 
 		#Make sure the water-gun is not flipped
-		if (sum(self.current_y, steps) > (MAX_STEPS / 2)):
+		if ((self.current_y + steps) > (MAX_STEPS / 2)):
 			self.move_x((MAX_STEPS / 2))
 			total_steps = ((MAX_STEPS / 2) - self.current_y) * 2
 			self.move_y(total_steps - steps)
-		if (sum(self.current_y, steps) < 0):
+		if ((self.current_y + steps) < 0):
 			self.move_x((MAX_STEPS / 2))
 			total_steps = (self.current_y) * 2
 			self.move_y(total_steps - steps)
