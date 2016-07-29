@@ -8,6 +8,10 @@ class water_gun:
 	shots_remaining = 100
 	current_x = (MAX_STEPS / 2)
 	current_y = (MAX_STEPS / 4)
+
+	motor_x = 0
+	motor_y = 0
+	motor_shoot = 0
 	
 	def move_x(self, steps):
 		#Removing unecessary full rotations
