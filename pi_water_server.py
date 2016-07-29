@@ -9,26 +9,32 @@ pin_set_s = [10,9,25,8]
 
 pi_water_controller = water_gun(pin_set_x, pin_set_y, pin_set_s)
 
-@app.route("/"):
+@app.route("/")
+def index():
 	return "This is Dean's Water Gun"
 
 @app.route("/right/<int:degrees>")
+def right():
 	pi_water_controller.move_x(degrees)
 	return "Done"
 
 @app.route("/left/<int:degrees>")
+def left():
 	pi_water_controller.move_x((degrees * -1))
 	return "Done"
 
 @app.route("/up/<int:degrees>")
+def up():
 	pi_water_controller.move_y(degrees)
 	return "Done"
 
 @app.route("/down/<int:degrees>")
+def down():
 	pi_water_controller.move_y((degrees * -1))
 	return "Done"
 
 @app.route("/shoot")
+def shoot():
 	pi_water_controller.shoot()
 	return "Done"
 
