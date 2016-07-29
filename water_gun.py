@@ -79,7 +79,7 @@ if __name__ == "__main__":
 	pi_water_controller.move_x(75)
 
 	pi_water_controller.move_y(90)
-	pi_water_controller.move_y(s180)
+	pi_water_controller.move_y(180)
 	pi_water_controller.move_y(45)
 	pi_water_controller.move_y(32)
 
