@@ -64,6 +64,9 @@ class water_gun:
 		self.motor_y = motor(motor_y_gpio)
 		self.motor_shoot = motor(motor_shoot_gpio)
 
+	def __del__(self):
+		self.return_to_center()
+
 if __name__ == "__main__":
 	GPIO.setwarnings(False)
 	pin_set_x = [14,15,18,17]
