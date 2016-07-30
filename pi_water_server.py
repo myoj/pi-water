@@ -1,4 +1,4 @@
-import water_gun
+from water_gun import water_gun
 from flask import Flask
 
 app = Flask(__name__)
