@@ -14,22 +14,22 @@ def index():
 	return "This is Dean's Water Gun"
 
 @app.route("/right/<int:degrees>")
-def right():
+def right(degrees):
 	pi_water_controller.move_x(degrees)
 	return "Done"
 
 @app.route("/left/<int:degrees>")
-def left():
+def left(degrees):
 	pi_water_controller.move_x((degrees * -1))
 	return "Done"
 
 @app.route("/up/<int:degrees>")
-def up():
+def up(degrees):
 	pi_water_controller.move_y(degrees)
 	return "Done"
 
 @app.route("/down/<int:degrees>")
-def down():
+def down(degrees):
 	pi_water_controller.move_y((degrees * -1))
 	return "Done"
 
