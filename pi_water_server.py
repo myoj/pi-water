@@ -3,8 +3,8 @@ from flask import Flask
 
 app = Flask(__name__)
 
-pin_set_x = [14,15,18,17]
-pin_set_y = [27,22,23,24]
+pin_set_y = [14,15,18,17]
+pin_set_x = [27,22,23,24]
 pin_set_s = [10,9,25,8]
 
 pi_water_controller = water_gun(pin_set_x, pin_set_y, pin_set_s)
