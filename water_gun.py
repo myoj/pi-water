@@ -10,15 +10,25 @@ class water_gun:
 	current_x = (MAX_STEPS / 2)
 	current_y = (MAX_STEPS / 4)
 	
-	def move_x(self, steps):
-		#Removing unecessary full rotations
-		steps = steps % MAX_STEPS
-		self.motor_x.shift(steps)
+	def move_x(self, degrees):
+		if degrees < 0:
+			#Removing unecessary full rotations
+			steps = abs(degrees) % MAX_STEPS
+			self.motor_x.shift((steps * -1))
+		else:
+			#Removing unecessary full rotations
+			steps = degrees % MAX_STEPS
+			self.motor_x.shift(steps)
 
-	def move_y(self, steps):
-		#Removing unecessary full rotations
-		steps = steps % MAX_STEPS
-		self.motor_y.shift(steps)
+	def move_y(self, degrees):
+		if degrees < 0:
+			#Removing unecessary full rotations
+			steps = abs(degrees) % MAX_STEPS
+			self.motor_y.shift((steps * -1))
+		else:
+			#Removing unecessary full rotations
+			steps = degrees % MAX_STEPS
+			self.motor_y.shift(steps)
 
 	def shoot(self):
 		self.motor_shoot.shoot()
