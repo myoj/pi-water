@@ -13,40 +13,12 @@ class water_gun:
 	def move_x(self, steps):
 		#Removing unecessary full rotations
 		steps = steps % MAX_STEPS
-
-		if((self.current_x + steps) > MAX_STEPS):
-			#Moving in counterclockwise direction to prevent tangled wires
-			steps = steps - MAX_STEPS
-			print "spinning {0} steps".format(steps)
-			self.motor_x.shift(steps)
-			self.current_x += steps
-		if((self.current_x + steps) < 0):
-			#Moving in clockwise direction to prevent tangled wires
-			degrees = MAX_STEPS - steps
-			print "spinning {0} degrees".format(steps)
-			self.motor_x.shift(steps)
-			self.current_x += steps
-		else:
-			print "spinning {0} steps".format(steps)
-			self.motor_x.shift(steps)
-			self.current_x += steps
+		self.motor_x.shift(steps)
 
 	def move_y(self, steps):
 		#Removing unecessary full rotations
 		degrees = steps % MAX_STEPS
-
-		#Make sure the water-gun is not flipped
-		if ((self.current_y + steps) > (MAX_STEPS / 2)):
-			self.move_x((MAX_STEPS / 2))
-			total_steps = ((MAX_STEPS / 2) - self.current_y) * 2
-			self.move_y(total_steps - steps)
-		if ((self.current_y + steps) < 0):
-			self.move_x((MAX_STEPS / 2))
-			total_steps = (self.current_y) * 2
-			self.move_y(total_steps - steps)
-		else:
-			self.motor_y.shift(steps)
-			self.current_y += steps
+		self.motor_y.shift(steps)
 
 	def shoot(self):
 		self.motor_shoot.shoot()
