@@ -17,7 +17,7 @@ class water_gun:
 
 	def move_y(self, steps):
 		#Removing unecessary full rotations
-		degrees = steps % MAX_STEPS
+		steps = steps % MAX_STEPS
 		self.motor_y.shift(steps)
 
 	def shoot(self):
